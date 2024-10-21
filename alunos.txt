@@ -1,0 +1,58 @@
+create database pratica_dml;
+use pratica_dml;
+create table alunos(
+id int auto_increment primary key,
+nome varchar(100),
+idade int);
+
+insert into alunos (nome,idade) 
+values ("joao",10);
+insert into alunos (nome,idade) 
+values ("maria",12);
+insert into alunos (nome,idade) 
+values ("carlos",9);
+insert into alunos (nome,idade) 
+values ("ana",11);
+insert into alunos (nome,idade) 
+values ("pedro",8);
+insert into alunos (nome,idade) 
+values ("lucas",12);
+insert into alunos (nome,idade) 
+values ("beatriz",10);
+insert into alunos (nome,idade) 
+values ("rafael",11);
+
+select * from alunos;
+SET SQL_SAFE_UPDATES=0;
+
+update alunos
+set idade=11
+where nome="joao";
+
+update alunos
+set idade=10
+where nome="carlos";
+
+update alunos
+set nome="pedro henrique"
+where nome="pedro";
+
+update alunos
+set nome="maria"
+where idade=11;
+
+update alunos
+set nome="sem nome"
+where idade <12;
+
+update alunos
+set idade=13
+where nome="lucas";
+
+delete from alunos where nome = "sem nome";
+
+delete from alunos where nome = "ana";
+
+delete from alunos where idade<10;
+
+delete from alunos where nome="beatriz";
